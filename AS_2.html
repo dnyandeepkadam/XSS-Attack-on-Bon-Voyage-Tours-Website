@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tours and Travels - Register</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            /* Background image setup */
+            background-image: url('https://www.aryavrittravels.com/wp-content/uploads/2023/06/south-india.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .register-container {
+            max-width: 400px;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: #ffffff;
+            cursor: pointer;
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        label {
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="register-container">
+        <h2>Register for Tours and Travels</h2>
+        <form id="register-form">
+            <div>
+                <label for="fullname">Full Name:</label>
+                <input type="text" id="fullname" placeholder="Enter your full name" required>
+            </div>
+            <div>
+                <label for="email">Email:</label>
+                <input type="email" id="email" placeholder="Enter your email" required>
+            </div>
+            <div>
+                <label for="password">Password:</label>
+                <input type="password" id="password" placeholder="Enter your password" required>
+            </div>
+            <button type="button" onclick="registerUser()">Register</button>
+        </form>
+    </div>
+
+    <script>
+        function registerUser() {
+            var fullname = document.getElementById("fullname").value;
+            var email = document.getElementById("email").value;
+            var password = document.getElementById("password").value;
+
+            // Simulated registration process (store credentials in localStorage)
+            localStorage.setItem("fullname", fullname);
+            localStorage.setItem("email", email);
+            localStorage.setItem("password", password);
+
+            // Display registration success message
+            alert("XSS Attack Detected..");
+
+            // Redirect to index.html after the alert is dismissed
+            setTimeout(function () {
+                window.location.href = "index.html";
+            }, 100); // Delay to ensure the alert is fully displayed
+        }
+    </script>
+</body>
+
+</html>
